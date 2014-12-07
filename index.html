@@ -97,7 +97,10 @@
                     	                    	$("#profile-name").text("localStorage.name");
 
                     	*/
-                    	alert(JSON.stringify(response)) },
+                    	alert(JSON.stringify(response)) ;
+                    	
+                    	apiTest();
+                    	},
                     	
                     	
                     function (response) { alert(JSON.stringify(response)) }); 
@@ -121,7 +124,7 @@
             };
             
             var apiTest = function () { 
-                facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
+                facebookConnectPlugin.api( "me/?fields=id,email,name,picture",
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) }); 
             };
