@@ -68,8 +68,6 @@
                 
                 <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-        
-        
         <script type="text/javascript">
             var login = function () {
                 if (!window.cordova) {
@@ -78,7 +76,7 @@
                 }
                 facebookConnectPlugin.login( ["email"], 
                     function (response) { alert(JSON.stringify(response));
-                      FB.api('/me', function(response) {	
+                     
                     	localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
                     	localStorage.id = response.id;
                     	localStorage.name = response.first_name;
@@ -91,12 +89,12 @@
                     		$("#map_canvas,#footer,#header").fadeIn();
 				initialize_map();
                     	
+                   }; 
                     
-                    
-                    }	 },
-                    function (response) { alert(JSON.stringify(response)) });
-            };
+                    	
+                    function (response) { alert(JSON.stringify(response)) }
             
+            };
             var showDialog = function () { 
                 facebookConnectPlugin.showDialog( { method: "feed" }, 
                     function (response) { alert(JSON.stringify(response)) },
@@ -129,7 +127,7 @@
     </head> 
     <body> 
     	
-    
+    	
       <div class="app">
            
             <div class="event listening button" onclick="login();">Login with Facebook</div>
@@ -169,7 +167,7 @@
 	
 	
 	
-		<div id="feed" class="body" style="display:none">
+		<div id="feed" class="body" style="display:none" >
 		<div class="feed">
 			<div class="container">
 				<div class="row">
@@ -740,7 +738,7 @@
 			{
 				
 					$(".body").fadeOut();
-                    		$("#feed.body").fadeIn();
+                    		$(".feed").fadeIn();
 				
 			return false;	
 			});
