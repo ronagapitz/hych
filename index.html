@@ -77,19 +77,12 @@
                     function (response) { 
                     	
                     	
-                    //	alert(JSON.stringify(response)) ;
-                    		//login 
-			$.post($url+"login",{'fb_id':localStorage.id, first_name: localStorage.first_name,
-			 last_name:localStorage.last_name, email: localStorage.email, profile_pic: localStorage.dp},function(e)
-			 {
-			 localStorage.fk = 	e.user_fk;
-			 
-			 alert(localStorage.fk);
-			 },"json");
+                
                     	
 
                     		$(".login").fadeOut();
                     		$("#map_canvas,#footer,#header").fadeIn();
+			
 				initialize_map(); 	
 			
 			
@@ -101,7 +94,15 @@
                     	
                     	apiTest();
                     
-                    	
+                    	    //	alert(JSON.stringify(response)) ;
+                    		//login 
+			$.post($url+"login",{'fb_id':localStorage.id, first_name: localStorage.first_name,
+			 last_name:localStorage.last_name, email: localStorage.email, profile_pic: localStorage.dp},function(e)
+			 {
+			 localStorage.fk = 	e.user_fk;
+			 
+			 alert(localStorage.fk);
+			 },"json");
                     	},
                   
                    
