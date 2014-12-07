@@ -76,18 +76,22 @@
                 }
                 facebookConnectPlugin.login( ["email"], 
                     function (response) { alert(JSON.stringify(response));
-                    	
+                      FB.api('/me', function(response) {	
                     	localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
                     	localStorage.id = response.id;
                     	localStorage.name = response.first_name;
                     	localStorage.email = response.email;
-                    	
+                    	$("#profile-photo").attr("src",localStorage.dp);
+                    	                    	$("#profile-name").text("localStorage.name");
+
 
                     		$(".login").fadeOut();
                     		$("#map_canvas,#footer,#header").fadeIn();
 				initialize_map();
                     	
-                    	 },
+                    
+                    
+                    }	 },
                     function (response) { alert(JSON.stringify(response)) });
             };
             
@@ -162,6 +166,125 @@
 	
 	
 	
+	
+		<div id="feed" class="body">
+		<div class="feed">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-3 feed-in-left">
+						<div class="profile-pic">
+							<img class="img-responsive picture" src="imgs/gk.jpg">
+						</div>
+					</div>
+					<div class="col-xs-9 feed-in-right">
+						<div class="org-name">
+							<h5>Gawad Kalinga Official</h5>
+						</div>
+						<div class="post-desc">
+							<p>Come join us in the Walang Iwanan Program!</p>
+						</div>
+						<div class="post-date row">
+							<div class="col-xs-3">
+								<p>Date:</p>
+							</div>
+							<div class="col-xs-9">
+								<p>Wednesday, November 21, 2014</p>
+							</div>
+						</div>
+						<div class="post-time row">
+							<div class="col-xs-3">
+								<p>Time:</p>
+							</div>
+							<div class="col-xs-9">
+								<p>3:00pm - 5:00pm</p>
+							</div>
+						</div>
+						<div class="post-place row">
+							<div class="col-xs-3">
+								<p>Place:</p>
+							</div>
+							<div class="col-xs-9">
+								<p>GK Commonwealth</p>
+							</div>
+						</div>
+						<div class="post-pic">
+							<img class="img-responsive picture" src="imgs/gkpic.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="buttons row">
+					<div class="col-xs-10 col-xs-offset-1">
+						<div class="col-xs-6">
+							<button class=" pull-right join btn">
+								Join
+							</button>
+						</div>
+						<div class="col-xs-6 share">
+								Share <img class="" src="imgs/share.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="feed" style="display:none">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-3 feed-in-left">
+						<div class="profile-pic">
+							<img class="img-responsive picture" src="imgs/gk.jpg">
+						</div>
+					</div>
+					<div class="col-xs-9 feed-in-right">
+						<div class="org-name">
+							<h5>Gawad Kalinga Official</h5>
+						</div>
+						<div class="post-desc">
+							<p>Come join us in the Walang Iwanan Program!</p>
+						</div>
+						<div class="post-date row">
+							<div class="col-xs-3">
+								<p>Date:</p>
+							</div>
+							<div class="col-xs-9">
+								<p>Wednesday, November 21, 2014</p>
+							</div>
+						</div>
+						<div class="post-time row">
+							<div class="col-xs-3">
+								<p>Time:</p>
+							</div>
+							<div class="col-xs-9">
+								<p>3:00pm - 5:00pm</p>
+							</div>
+						</div>
+						<div class="post-place row">
+							<div class="col-xs-3">
+								<p>Place:</p>
+							</div>
+							<div class="col-xs-9">
+								<p>GK Commonwealth</p>
+							</div>
+						</div>
+						<div class="post-pic">
+							<img class="img-responsive picture" src="imgs/gkpic.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="buttons row">
+					<div class="col-xs-10 col-xs-offset-1">
+						<div class="col-xs-6">
+							<button class="join pull-right  btn">
+								Join
+							</button>
+						</div>
+						<div class="col-xs-6 share">
+								Share <img class="" src="imgs/share.png">
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
 		<div id="footer" class="" style="display:none">
 	
 			
@@ -602,11 +725,20 @@
 			return false;	
 			});
 			
-			$("#profile").click(function()
+			$("#footer #profile").click(function()
 			{
 				
 					$(".body").fadeOut();
                     		$("#profile.body").empty().fadeIn();
+				
+			return false;	
+			});
+			
+			$("#footer #home").click(function()
+			{
+				
+					$(".body").fadeOut();
+                    		$(".feed").empty().fadeIn();
 				
 			return false;	
 			});
