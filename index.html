@@ -167,7 +167,7 @@
 	
 	
 	
-		<div id="feed" class="body">
+		<div id="feed" class="body" style="display:none">
 		<div class="feed">
 			<div class="container">
 				<div class="row">
@@ -226,7 +226,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="feed" style="display:none">
+		<div class="feed" >
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-3 feed-in-left">
@@ -729,7 +729,7 @@
 			{
 				
 					$(".body").fadeOut();
-                    		$("#profile.body").empty().fadeIn();
+                    		$("#profile.body").fadeIn();
 				
 			return false;	
 			});
@@ -738,7 +738,7 @@
 			{
 				
 					$(".body").fadeOut();
-                    		$(".feed").empty().fadeIn();
+                    		$("#feed.body").fadeIn();
 				
 			return false;	
 			});
