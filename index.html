@@ -67,94 +67,7 @@
                 <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
         <script type="text/javascript">
-        var $url = "http://howyoucanhelp.ph/rest/";
-        
-        
-            var login = function () {
-                if (!window.cordova) {
-                    var appId = prompt("493708454047333", "");
-                    facebookConnectPlugin.browserInit(appId);
-                }
-                  facebookConnectPlugin.login( ["email"], 
-                    function (response) { 
-                    	
-                    	
-                
-                    	
 
-                    		$(".login").fadeOut();
-                    		$("#map_canvas,#footer,#header").fadeIn();
-			
-				initialize_map(); 	
-			
-			
-                    
-                    
-
-                    	
-                    	//alert(JSON.stringify(response)) ;
-                    	
-                    	apiTest();
-                    
-                    	    //	alert(JSON.stringify(response)) ;
-                    		//login 
-			
-                    	},
-                  
-                   
-                    	
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-                
-                
-                
-             
-            var showDialog = function () { 
-                facebookConnectPlugin.showDialog( { method: "feed" }, 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            };
-            
-            var apiTest = function () { 
-                facebookConnectPlugin.api( "me/",null,
-                    function (response) { 
-                    	
-                    //	alert(JSON.stringify(response)) 
-                    	
-                    		 localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
-                    	localStorage.id = response.id;
-                    	localStorage.first_name = response.first_name;
-                    	localStorage.last_name = response.last_name;
-                    	localStorage.email = response.email;
-                    	$("#profile-photo").attr("src",localStorage.dp);
-                    	                    	$("#profile-name").text(localStorage.first_name + " " + localStorage.last_name);
-                    	
-                    	$.post($url+"login",{'fb_id':localStorage.id, first_name: localStorage.first_name,
-			 last_name:localStorage.last_name, email: localStorage.email, profile_pic: localStorage.dp},function(e)
-			 {
-			 localStorage.fk = 	e.user_fk;
-			 
-			 alert(localStorage.fk);
-			 },"json");
-                    	},
-                    function (response) { alert(JSON.stringify(response)) }); 
-            };
-            var getAccessToken = function () { 
-                facebookConnectPlugin.getAccessToken( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            };
-            
-            var getStatus = function () { 
-                facebookConnectPlugin.getLoginStatus( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            };
-            var logout = function () { 
-                facebookConnectPlugin.logout( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            };
         </script>         
         
     </head> 
@@ -395,7 +308,96 @@
 			
 			<script type="text/javascript">
 			//<![CDATA[
+			        $(function()
+        {
+        var $url = "http://howyoucanhelp.ph/rest/";
+        
+        
+            var login = function () {
+                if (!window.cordova) {
+                    var appId = prompt("493708454047333", "");
+                    facebookConnectPlugin.browserInit(appId);
+                }
+                  facebookConnectPlugin.login( ["email"], 
+                    function (response) { 
+                    	
+                    	
+                
+                    	
+
+                    		$(".login").fadeOut();
+                    		$("#map_canvas,#footer,#header").fadeIn();
 			
+				initialize_map(); 	
+			
+			
+                    
+                    
+
+                    	
+                    	//alert(JSON.stringify(response)) ;
+                    	
+                    	apiTest();
+                    
+                    	    //	alert(JSON.stringify(response)) ;
+                    		//login 
+			
+                    	},
+                  
+                   
+                    	
+                    function (response) { alert(JSON.stringify(response)) });
+            }
+                
+                
+                
+             
+            var showDialog = function () { 
+                facebookConnectPlugin.showDialog( { method: "feed" }, 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            };
+            
+            var apiTest = function () { 
+                facebookConnectPlugin.api( "me/",null,
+                    function (response) { 
+                    	
+                    //	alert(JSON.stringify(response)) 
+                    	
+                    		 localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
+                    	localStorage.id = response.id;
+                    	localStorage.first_name = response.first_name;
+                    	localStorage.last_name = response.last_name;
+                    	localStorage.email = response.email;
+                    	$("#profile-photo").attr("src",localStorage.dp);
+                    	                    	$("#profile-name").text(localStorage.first_name + " " + localStorage.last_name);
+                    	
+                    	$.post($url+"login",{'fb_id':localStorage.id, first_name: localStorage.first_name,
+			 last_name:localStorage.last_name, email: localStorage.email, profile_pic: localStorage.dp},function(e)
+			 {
+			 localStorage.fk = 	e.user_fk;
+			 
+			 alert(localStorage.fk);
+			 },"json");
+                    	},
+                    function (response) { alert(JSON.stringify(response)) }); 
+            };
+            var getAccessToken = function () { 
+                facebookConnectPlugin.getAccessToken( 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            };
+            
+            var getStatus = function () { 
+                facebookConnectPlugin.getLoginStatus( 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            };
+            var logout = function () { 
+                facebookConnectPlugin.logout( 
+                    function (response) { alert(JSON.stringify(response)) },
+                    function (response) { alert(JSON.stringify(response)) });
+            };
 			var map; // Global declaration of the map
 			var lat_longs_map = new Array();
 			var markers_map = new Array();
@@ -777,14 +779,9 @@
 			});
 			
 			
-			$.get($url+"login",{'fb_id':'localStorage.id', first_name: 'localStorage.first_name',
-			 last_name:'localStorage.last_name', email: 'localStorage.email', profile_pic: 'localStorage.dp'},function(e)
-			 {
-			 localStorage.fk = 	e.user_fk;
-			 
-			 alert(localStorage.fk);
-			 },"jsonp");
+			
 		
+		});
 			</script>			
 			
 			
