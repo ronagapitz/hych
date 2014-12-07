@@ -92,7 +92,8 @@
 		<center><img class="img-responsive header-logo" src="imgs/logo.png"></center>
 	</div>
 
-        <div class="login">
+        <div class="login" style="position: absolute;
+height: 100%;">
 		<div class="container">
 			<div class="col-xs-12">
 				<div class="logo">
@@ -107,211 +108,10 @@
 		</div>
 	</div>
 	
-	<div id="map_canvas" class="body" style="position: absolute;width:100%;height:100%;top: 0px;display:none;"> 
-		
-		
-			<div class="report panel">
-			<a href="" data-toggle="modal" data-target="#report"><div><img src="imgs/report.png" class="report-icons"></div></a>
-		</div>
-		
-			<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-dialog report-modal">
-				<div class="modal-content">
-				  <div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title report-title" id="myModalLabel">Report</h4>
-				  </div>
-				  <div class="modal-body">
-					
-					
-					
-					
-					<div class="report-type-dialog" >
-							<div class="report-row row">
-								<div class="col-xs-4">
-									<center><img  data-category="Flood" src="imgs/flood.png" class=" cat img-responsive report-type-button"><br> Flood</center>
-								</div>
-								<div class="col-xs-4">
-									<center><img   data-category="Help Needed" src="imgs/help.png" class=" cat img-responsive report-type-button"><br> Help Needed</center>
-								</div>
-								<div class="col-xs-4">
-									<center><img  data-category="Evacuation Area" src="imgs/evacuation.png" class=" cat img-responsive report-type-button"><br> Evacuation Area</center>
-								</div>
-							</div>
-							<div class="report-row row">
-								<div class="col-xs-4">
-									<center><img  data-category="Donation Drop-off" src="imgs/dropoff.png" class=" cat img-responsive report-type-button"><br> Donation Drop-off</center>
-								</div>
-								<div class="col-xs-4">
-									<center><img   data-category="Fund Raising" src="imgs/fund.png" class="  cat img-responsive report-type-button"><br> Fund Raising</center>
-								</div>
-								<div class="col-xs-4">
-									<center><img   data-category="Volunteer Station" src="imgs/volunteer.png" class=" cat img-responsive report-type-button">Volunteer Station</center>
-								</div>
-							</div>
-						</div>
-						<div class="report-form" style="display: none">
-							<div>
-								<div class="row">
-									<div class="col-xs-10 col-xs-offset-1">
-										<input class="form-control" type="text" name="title" id="title" placeholder="Event Name">
-										<textarea class="form-control" name="description" id="description" placeholder="Description" style="display: none;"></textarea>
-										<div id="datetime_start-container" class="form-group col-xs-6" style="display: none;">
-											<label for="datetime_start">Start Date/Time</label>
-											<input class="form-control" type="datetime-local" id="datetime_start" name="datetime_start">
-										</div>
-										<div id="datetime_end-container" class="form-group col-xs-6" style="display: none;">
-											<label for="datetime_end">End Date/Time</label>
-											<input class="form-control" type="datetime-local" id="datetime_end" name="datetime_end">
-										</div>
-										<input class="form-control" type="text" name="venue" id="venue" placeholder="Venue Address" style="display: none;">
-									</div>
-								</div>
-								<div class="row report-form-toggle" style="margin-top:10px;">
-									<div class="col-xs-10 col-xs-offset-1">
-										<button id="description-toggle" class="col-xs-3 btn btn-default btn-md">
-											<span class="glyphicon glyphicon-align-left"></span>
-										</button>
-										<button id="datetime_start-toggle" class="col-xs-3 btn btn-default btn-md">
-											<span class="glyphicon glyphicon-play"></span>
-										</button>
-										<button id="datetime_end-toggle" class="col-xs-3 btn btn-default btn-md">
-											<span class="glyphicon glyphicon-stop"></span>
-										</button>
-										<button id="venue-toggle" class="col-xs-3 btn btn-default btn-md">
-											<span class="glyphicon glyphicon-map-marker"></span>
-										</button>
-									</div>
-								</div>
-								<div class="row report-form-toggle" style="margin-top:10px;">
-									<button class="submit_message btn btn-md btn-info col-xs-10 col-xs-offset-1">
-										Submit
-									</button>
-								</div>
-				  </div>
-				  
-				
-	</div>
-	</div>
-	
+
 	
 		<div id="feed" class="body" style="display:none" >
-		<div class="feed">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-3 feed-in-left">
-						<div class="profile-pic">
-							<img class="img-responsive picture" src="imgs/gk.jpg">
-						</div>
-					</div>
-					<div class="col-xs-9 feed-in-right">
-						<div class="org-name">
-							<h5>Gawad Kalinga Official</h5>
-						</div>
-						<div class="post-desc">
-							<p>Come join us in the Walang Iwanan Program!</p>
-						</div>
-						<div class="post-date row">
-							<div class="col-xs-3">
-								<p>Date:</p>
-							</div>
-							<div class="col-xs-9">
-								<p>Wednesday, November 21, 2014</p>
-							</div>
-						</div>
-						<div class="post-time row">
-							<div class="col-xs-3">
-								<p>Time:</p>
-							</div>
-							<div class="col-xs-9">
-								<p>3:00pm - 5:00pm</p>
-							</div>
-						</div>
-						<div class="post-place row">
-							<div class="col-xs-3">
-								<p>Place:</p>
-							</div>
-							<div class="col-xs-9">
-								<p>GK Commonwealth</p>
-							</div>
-						</div>
-						<div class="post-pic">
-							<img class="img-responsive picture" src="imgs/gkpic.jpg">
-						</div>
-					</div>
-				</div>
-				<div class="buttons row">
-					<div class="col-xs-10 col-xs-offset-1">
-						<div class="col-xs-6">
-							<button class=" pull-right join btn">
-								Join
-							</button>
-						</div>
-						<div class="col-xs-6 share">
-								Share <img class="" src="imgs/share.png">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="feed" >
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-3 feed-in-left">
-						<div class="profile-pic">
-							<img class="img-responsive picture" src="imgs/gk.jpg">
-						</div>
-					</div>
-					<div class="col-xs-9 feed-in-right">
-						<div class="org-name">
-							<h5>Gawad Kalinga Official</h5>
-						</div>
-						<div class="post-desc">
-							<p>Come join us in the Walang Iwanan Program!</p>
-						</div>
-						<div class="post-date row">
-							<div class="col-xs-3">
-								<p>Date:</p>
-							</div>
-							<div class="col-xs-9">
-								<p>Wednesday, November 21, 2014</p>
-							</div>
-						</div>
-						<div class="post-time row">
-							<div class="col-xs-3">
-								<p>Time:</p>
-							</div>
-							<div class="col-xs-9">
-								<p>3:00pm - 5:00pm</p>
-							</div>
-						</div>
-						<div class="post-place row">
-							<div class="col-xs-3">
-								<p>Place:</p>
-							</div>
-							<div class="col-xs-9">
-								<p>GK Commonwealth</p>
-							</div>
-						</div>
-						<div class="post-pic">
-							<img class="img-responsive picture" src="imgs/gkpic.jpg">
-						</div>
-					</div>
-				</div>
-				<div class="buttons row">
-					<div class="col-xs-10 col-xs-offset-1">
-						<div class="col-xs-6">
-							<button class="join pull-right  btn">
-								Join
-							</button>
-						</div>
-						<div class="col-xs-6 share">
-								Share <img class="" src="imgs/share.png">
-						</div>
-					</div>
-				</div>				
-			</div>
-		</div>
+		
 	</div>
 		<div id="footer" class="" style="display:none">
 	
@@ -955,7 +755,98 @@ function getLocation(){
 
 $("#feed").load($url+"feed");
 							</script>
+			
+			
+			
+			
+			
+				<div id="map_canvas" class="body" style="position: absolute;width:100%;height:100%;top: 0px;display:none;"> 
+		
+		
+			<div class="report panel" style="z-index:10">
+			<a href="" data-toggle="modal" data-target="#report"><div><img src="imgs/report.png" class="report-icons"></div></a>
+		</div>
+		
+			<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog report-modal">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title report-title" id="myModalLabel">Report</h4>
+				  </div>
+				  <div class="modal-body">
 					
+					
+					
+					
+					<div class="report-type-dialog" >
+							<div class="report-row row">
+								<div class="col-xs-4">
+									<center><img  data-category="Flood" src="imgs/flood.png" class=" cat img-responsive report-type-button"><br> Flood</center>
+								</div>
+								<div class="col-xs-4">
+									<center><img   data-category="Help Needed" src="imgs/help.png" class=" cat img-responsive report-type-button"><br> Help Needed</center>
+								</div>
+								<div class="col-xs-4">
+									<center><img  data-category="Evacuation Area" src="imgs/evacuation.png" class=" cat img-responsive report-type-button"><br> Evacuation Area</center>
+								</div>
+							</div>
+							<div class="report-row row">
+								<div class="col-xs-4">
+									<center><img  data-category="Donation Drop-off" src="imgs/dropoff.png" class=" cat img-responsive report-type-button"><br> Donation Drop-off</center>
+								</div>
+								<div class="col-xs-4">
+									<center><img   data-category="Fund Raising" src="imgs/fund.png" class="  cat img-responsive report-type-button"><br> Fund Raising</center>
+								</div>
+								<div class="col-xs-4">
+									<center><img   data-category="Volunteer Station" src="imgs/volunteer.png" class=" cat img-responsive report-type-button">Volunteer Station</center>
+								</div>
+							</div>
+						</div>
+						<div class="report-form" style="display: none">
+							<div>
+								<div class="row">
+									<div class="col-xs-10 col-xs-offset-1">
+										<input class="form-control" type="text" name="title" id="title" placeholder="Event Name">
+										<textarea class="form-control" name="description" id="description" placeholder="Description" style="display: none;"></textarea>
+										<div id="datetime_start-container" class="form-group col-xs-6" style="display: none;">
+											<label for="datetime_start">Start Date/Time</label>
+											<input class="form-control" type="datetime-local" id="datetime_start" name="datetime_start">
+										</div>
+										<div id="datetime_end-container" class="form-group col-xs-6" style="display: none;">
+											<label for="datetime_end">End Date/Time</label>
+											<input class="form-control" type="datetime-local" id="datetime_end" name="datetime_end">
+										</div>
+										<input class="form-control" type="text" name="venue" id="venue" placeholder="Venue Address" style="display: none;">
+									</div>
+								</div>
+								<div class="row report-form-toggle" style="margin-top:10px;">
+									<div class="col-xs-10 col-xs-offset-1">
+										<button id="description-toggle" class="col-xs-3 btn btn-default btn-md">
+											<span class="glyphicon glyphicon-align-left"></span>
+										</button>
+										<button id="datetime_start-toggle" class="col-xs-3 btn btn-default btn-md">
+											<span class="glyphicon glyphicon-play"></span>
+										</button>
+										<button id="datetime_end-toggle" class="col-xs-3 btn btn-default btn-md">
+											<span class="glyphicon glyphicon-stop"></span>
+										</button>
+										<button id="venue-toggle" class="col-xs-3 btn btn-default btn-md">
+											<span class="glyphicon glyphicon-map-marker"></span>
+										</button>
+									</div>
+								</div>
+								<div class="row report-form-toggle" style="margin-top:10px;">
+									<button class="submit_message btn btn-md btn-info col-xs-10 col-xs-offset-1">
+										Submit
+									</button>
+								</div>
+							</div>
+				  </div>
+				  
+				
+	</div>
+			
 					
     </body>
 </html>
