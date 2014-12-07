@@ -639,14 +639,14 @@ height: 100%;">
 					$(".login,.body").fadeOut();
                     		$("#map_canvas,#header").empty().fadeIn();
                     		
-                    		$(".report panel").show();
+                    		$(".report_panel").show();
 				initialize_map();
 			return false;	
 			});
 			
 			$("#footer #profile").click(function()
 			{
-				$(".report panel").hide();
+				$(".report.panel").hide();
 					$(".body").fadeOut();
                     		$("#profile.body").fadeIn();
 				
@@ -655,7 +655,7 @@ height: 100%;">
 			
 			$("#footer #home").click(function()
 			{
-				$(".report panel").hide();
+				$(".report.panel").hide();
 					$(".body").fadeOut();
                     		$("#feed.body").fadeIn();
 				
@@ -663,16 +663,7 @@ height: 100%;">
 			});
 			
 			
-		
-		
-		
-		
-		
-			
-			</script>			
-					
-							<script>
-							var $cat = '';
+			var $cat = '';
 								$("#description").hide();
 								$("#datetime_start-container").hide();
 								$("#datetime_end-container").hide();
@@ -710,7 +701,7 @@ height: 100%;">
 								
 								
 								{
-									alert();
+									
 									  	$.post($url+"report",{'fb_id':"localStorage.id",user_fk: 4,
 									  	event_type_fk: $cat,title:$("#title").val(),
 									  	description: $("#description").val(), 
@@ -756,8 +747,14 @@ function getLocation(){
 
 
 $("#feed").load($url+"feed");
-							</script>
+		
+		
+		
+		
 			
+			</script>			
+					
+						
 			
 			
 			
