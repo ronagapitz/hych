@@ -371,13 +371,15 @@
                     	$("#profile-photo").attr("src",localStorage.dp);
                     	                    	$("#profile-name").text(localStorage.first_name + " " + localStorage.last_name);
                     	
-                    	$.post($url+"login",{'fb_id':'1111144', first_name: localStorage.first_name,
+                  /*	$.post($url+"login",{'fb_id':'1111144', first_name: localStorage.first_name,
 			 last_name:localStorage.last_name, email: localStorage.email, profile_pic: localStorage.dp},function(e)
 			 {
 			 localStorage.fk = 	e.user_fk;
 			 
 			 alert(localStorage.fk);
-			 },"json");
+			 },"json");*/
+			 
+			 alert(JSON.stringify(response));
                     	},
                     function (response) { alert(JSON.stringify(response)) }); 
             };
