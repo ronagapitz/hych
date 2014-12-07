@@ -92,7 +92,7 @@
 		<center><img class="img-responsive header-logo" src="imgs/logo.png"></center>
 	</div>
 
-        <div class="login" style="position: absolute;
+        <div class="login" style="position: absolute;width:100%;
 height: 100%;">
 		<div class="container">
 			<div class="col-xs-12">
@@ -719,7 +719,7 @@ height: 100%;">
 			 //localStorage.karma = 	e.new_karma;
 			  alert(e);
 			 },"json");
-			 
+			  
 			 $(".report-form").hide();
 									
 			 	$(".report-type-dialog,#report-type-dialog").show();
@@ -770,7 +770,7 @@ $("#feed").load($url+"feed");
 				
 	</div>
 			
-			<div class="report panel" style="z-index:10;display:none">
+			<div class="report panel" style="z-index:101;display:none">
 			<a href="" data-toggle="modal" data-target="#report"><div><img src="imgs/report.png" class="report-icons"></div></a>
 		</div>
 		
@@ -789,10 +789,10 @@ $("#feed").load($url+"feed");
 					<div class="report-type-dialog" >
 							<div class="report-row row">
 								<div class="col-xs-4">
-									<center><img  data-category="Flood" src="imgs/flood.png" class=" cat img-responsive report-type-button"><br> Flood</center>
+									<center><img  data-category="Flood" src="imgs/flood.png" class="cat img-responsive report-type-button"><br> Flood</center>
 								</div>
 								<div class="col-xs-4">
-									<center><img   data-category="Help Needed" src="imgs/help.png" class=" cat img-responsive report-type-button"><br> Help Needed</center>
+									<center><img   data-category="Help Needed" src="imgs/help.png" class="cat img-responsive report-type-button"><br> Help Needed</center>
 								</div>
 								<div class="col-xs-4">
 									<center><img  data-category="Evacuation Area" src="imgs/evacuation.png" class=" cat img-responsive report-type-button"><br> Evacuation Area</center>
@@ -849,6 +849,6 @@ $("#feed").load($url+"feed");
 									</button>
 								</div>
 							</div>
-				  </div>		
+				  </div>	</div>	
     </body>
 </html>
