@@ -50,6 +50,12 @@
         <link rel="apple-touch-startup-image" href="img/splash/ios/splash1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
         <link rel="apple-touch-startup-image" href="img/splash/ios/splash1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
             
+            
+            <link href = 'bootstrap/css/bootstrap.min.css' rel = 'stylesheet' type = 'text/css'>
+	<link href = 'css/style.css' rel = 'stylesheet' type = 'text/css'>
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+            
         <!-- ADD2HOME META TAGS -->
         <link rel="stylesheet" type="text/css" href="js/lib/add2home.css">
         <script type="application/javascript" src="js/lib/add2home.js"></script>
@@ -66,39 +72,41 @@
                 facebookConnectPlugin.login( ["email"], 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
-            }
+            };
             
             var showDialog = function () { 
                 facebookConnectPlugin.showDialog( { method: "feed" }, 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
-            }
+            };
             
             var apiTest = function () { 
                 facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) }); 
-            }
+            };
             var getAccessToken = function () { 
                 facebookConnectPlugin.getAccessToken( 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
-            }
+            };
             
             var getStatus = function () { 
                 facebookConnectPlugin.getLoginStatus( 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
-            }
+            };
             var logout = function () { 
                 facebookConnectPlugin.logout( 
                     function (response) { alert(JSON.stringify(response)) },
                     function (response) { alert(JSON.stringify(response)) });
-            }
+            };
         </script>         
         
     </head> 
     <body> 
+    	
+    	<!--
       <div class="app">
            
             <div class="event listening button" onclick="login();">Login with Facebook</div>
@@ -110,6 +118,24 @@
         </div>
         
         
+       -->
+        
+        
+        <div class="login">
+
+		<div class="container">
+			<div class="col-xs-12">
+				<div class="logo">
+					<center><img class="img-responsive" src="imgs/logo2.png"></center>
+				</div>
+			</div>
+			<div class="col-xs-12">
+				<div>
+					<button type="button" class="btn btn-lg btn-primary col-xs-12 login-btn">Log-in with Facebook</button>
+				</div>
+			</div>
+		</div>
+	</div>
         
         <div id="fb-root"></div>
         
