@@ -53,6 +53,11 @@
             
             <link href = 'bootstrap/css/bootstrap.min.css' rel = 'stylesheet' type = 'text/css'>
 	<link href = 'css/style.css' rel = 'stylesheet' type = 'text/css'>
+		<link href = 'css/profile.css' rel = 'stylesheet' type = 'text/css'>
+		
+		<link href = 'css/template.css' rel = 'stylesheet' type = 'text/css'>
+		
+			
 	<!-- Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
             
@@ -72,7 +77,14 @@
                 facebookConnectPlugin.login( ["email"], 
                     function (response) { alert(JSON.stringify(response));
                     	
-                    		$(".login").hide();
+                    	localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
+                    	localStorage.id = response.id;
+                    	localStorage.name = response.first_name;
+                    	localStorage.email = response.email;
+                    	
+
+                    		$(".login").fadeOut();
+                    		$("#map_canvas,#footer,#header").fadeIn();
 				initialize_map();
                     	
                     	 },
@@ -125,7 +137,10 @@
         
        -->
         
-        <button id="map">map</button>
+       <div id="header" style="display:none">
+		<img src="imgs/search.png" id="search-icon" class=" icon pull-left"/>
+		<center><img class="img-responsive header-logo" src="imgs/logo.png"></center>
+	</div>
 
         <div class="login">
 		<div class="container">
@@ -142,7 +157,76 @@
 		</div>
 	</div>
 	
-	<div id="map_canvas" style="position: absolute;width:100%;height:100%;top: 30px"></div>
+	<div id="map_canvas" class="body" style="position: absolute;width:100%;height:100%;top: 0px;display:none;"> 
+		</div>
+	
+	
+	
+		<div id="footer" class="" style="display:none">
+	
+			
+			<div id="map"  class="footer-tab col-xs-4">
+				
+					<span class="icon" ></span>
+					<span class="footer-tab-label">MAP</span>
+				
+			</div>
+		
+		<a href="#">
+			<div id="home" class="footer-tab col-xs-4">
+			<center>
+				<span class="icon" ></span>
+				<span class="footer-tab-label">HOME</span>
+			</center>
+			</div>
+		</a>
+		<a href="#">
+			<div id="profile" class="footer-tab col-xs-4 hych-active">
+				<center>
+					<span class="icon" ></span>
+					<span class="footer-tab-label">PROFILE</span>
+				</center>
+			</div>
+		</a>
+		
+	</div>
+	
+	
+	
+	<div id="profile" class="body" style="display:none">
+		<center>
+			<img src="imgs/juan.jpg" id="profile-photo"/>
+			<h4 id="profile-name">Juan Dela Cruz</h4>
+			<span id="profile-karma">3,500 Good Karma</span>
+		</center>
+		<div id="recent-act-container">
+			<div id="recent-act-header" class="">
+				Most Recent Activities
+			</div>
+			<div id="recent-act-list" class="">
+				<div class="recent-act-item">
+					Volunteered in Gawad Kalinga's Walang Iwanan.
+				</div>
+				<hr/>
+				<div class="recent-act-item">
+					Volunteered in Gawad Kalinga's Walang Iwanan.
+				</div>
+				<hr/>
+				<div class="recent-act-item">
+					Volunteered in Gawad Kalinga's Walang Iwanan.
+				</div>
+				<hr/>
+				<div class="recent-act-item">
+					Volunteered in Gawad Kalinga's Walang Iwanan.
+				</div>
+				<hr/>
+				<div class="recent-act-item">
+					Volunteered in Gawad Kalinga's Walang Iwanan.
+				</div>
+				<hr/>
+			</div>
+		</div>
+	</div>
         
         <div id="fb-root"></div>
         
@@ -155,12 +239,7 @@
 			
 			<script type="text/javascript">
 			//<![CDATA[
-			$("#map").click(function()
-			{
-				$(".login").hide();
-				initialize_map();
-				
-			});
+			
 			var map; // Global declaration of the map
 			var lat_longs_map = new Array();
 			var markers_map = new Array();
@@ -514,9 +593,28 @@
 			
 			//]]>
 			
+			$("#map").click(function()
+			{
+				
+					$(".login").fadeOut();
+                    		$("#map_canvas,#header").empty().fadeIn();
+				initialize_map();
+			return false;	
+			});
+			
+			$("#profile").click(function()
+			{
+				
+					$(".body").fadeOut();
+                    		$("#profile.body").empty().fadeIn();
+				
+			return false;	
+			});
+			
+			</script>			
 			
 			
-			</script>				
+	
 					
     </body>
 </html>
