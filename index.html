@@ -15,7 +15,7 @@
         <meta name="revisit-after" content="7 days">
         
         <!-- SAFARI WEB APP META TAGS -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
@@ -78,8 +78,9 @@
                     function (response) { 
                     	
                     	
-                    	alert(JSON.stringify(response)) },
-                   localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
+                    	alert(JSON.stringify(response)) ;
+                    	
+                    	 localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
                     	localStorage.id = response.id;
                     	localStorage.name = response.first_name;
                     	localStorage.email = response.email;
@@ -93,6 +94,10 @@
                     	
                     	
                     	
+                    	
+                    	},
+                  
+                   
                     	
                     function (response) { alert(JSON.stringify(response)) });
             }
