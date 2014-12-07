@@ -142,6 +142,10 @@ height: 100%;">
 		
 	</div>
 	
+
+
+
+
 	
 	
 	<div id="profile" class="body" style="display:none">
@@ -152,29 +156,18 @@ height: 100%;">
 		</center>
 		<div id="recent-act-container">
 			<div id="recent-act-header" class="">
-				Most Recent Activities
+			Won I am a Changemaker 2014 for 100,000 Good Karma.
 			</div>
 			<div id="recent-act-list" class="">
 				<div class="recent-act-item">
-					Volunteered in Gawad Kalinga's Walang Iwanan.
+					Provided IT and Marketing Services to NGOs, foundations, and social enterprises for over 2,000,000 Good Karma.
 				</div>
 				<hr/>
 				<div class="recent-act-item">
-					Volunteered in Gawad Kalinga's Walang Iwanan.
+				Made meaningful relationships with various organizations in the for-a-cause sector to ensure good market positioning.
 				</div>
 				<hr/>
-				<div class="recent-act-item">
-					Volunteered in Gawad Kalinga's Walang Iwanan.
-				</div>
-				<hr/>
-				<div class="recent-act-item">
-					Volunteered in Gawad Kalinga's Walang Iwanan.
-				</div>
-				<hr/>
-				<div class="recent-act-item">
-					Volunteered in Gawad Kalinga's Walang Iwanan.
-				</div>
-				<hr/>
+				
 			</div>
 		</div>
 	</div>
@@ -258,7 +251,7 @@ height: 100%;">
                	$.post($url+"login",{'fb_id':localStorage.id, first_name: localStorage.first_name, last_name:localStorage.last_name, email: localStorage.email, profile_pic: localStorage.dp},function(e)
 			 {
 			 localStorage.fk = 	e.user_fk;
-			  alert(localStorage.fk);
+			//  alert(localStorage.fk);
 			 },"json");
 			 
 			// alert(JSON.stringify(response));
@@ -706,9 +699,9 @@ height: 100%;">
 
 function errorHandler(err) {
   if(err.code == 1) {
-    alert("Error: Access is denied!");
+    //alert("Error: Access is denied!");
   }else if( err.code == 2) {
-    alert("Error: Position is unavailable!");
+   // alert("Error: Position is unavailable!");
   }
 }
 function getLocation(){
@@ -720,7 +713,7 @@ function getLocation(){
                                                errorHandler,
                                                options);
    }else{
-      alert("Sorry, browser does not support geolocation!");
+     // alert("Sorry, browser does not support geolocation!");
    }
 }
 
@@ -840,7 +833,7 @@ $("#feed").load($url+"feed");
 									  	  venue: $("#venue").val(),coordinates:coor},function(e)
 			 {
 			 //localStorage.karma = 	e.new_karma;
-			  alert(e);
+			//  alert(e);
 			 },"json");
 			  
 			 $(".report-form").hide();
