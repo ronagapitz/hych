@@ -53,10 +53,37 @@
         <!-- ADD2HOME META TAGS -->
         <link rel="stylesheet" type="text/css" href="js/lib/add2home.css">
         <script type="application/javascript" src="js/lib/add2home.js"></script>
+        <script>
+       if ((typeof Cordova == 'undefined') || (typeof cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
+  if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included pg-plugin-fb-connect.js correctly');
+  if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
+  
+  document.addEventListener('deviceready', function() {
+                            try {
+                            //alert('Device is ready! Make sure you set your app_id below this alert.');
+                            FB.init({ appId:  493708454047333, nativeInterface: CDV.FB, useCachedDialogs: false });
+                            } catch (e) {
+                            alert(e);
+                            }
+                            }, false);
+                            
+                            
+                $(function()
+                {
+                	
+                	$("#button").click(function()
+                	{
+                		
+                		alert();
+                	});
+                })  ;          
+        </script>
+        <script src="cdv-plugin-fb-connect.js"></script>
+<script src="facebook-js-sdk.js"></script>
     </head> 
     <body> 
         
-        App Content
+      <button id="login" >Login</button>
         
         <!-- SCRIPTS -->
         <script type="application/javascript" src="js/lib/jquery-2.0.3.js"></script>

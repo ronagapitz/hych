@@ -11,7 +11,7 @@
         APPLICATION DESCRIPTION
     </description>
 
-    <author href="http://venerons.github.io" email="veneronslaboratories@gmail.com">Daniele Veneroni</author>
+    <author href="http://venerons.github.io" email="ronagapitz@yahoo.com">ROn Agapito</author>
         
     <!-- ICONS -->
         
@@ -62,8 +62,8 @@
         
     <!-- GENERAL PREFERENCES -->
         
-    <preference name="phonegap-version" value="3.1.0" />
-    <preference name="orientation" value="default" />
+    <preference name="phonegap-version" value="3.6.3" />
+    <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="true" /> <!-- remove the upper bar on iOS and Android -->
         
     <!-- iOS PREFERENCES -->
@@ -103,6 +103,13 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
     -->
+    
+     <gap:plugin name="nl.x-services.plugins.socialsharing" version="3.5" />
+ 
+	<gap:plugin name="com.phonegap.plugins.facebookconnect">
+    <param name="APP_ID" value="493708454047333" />
+    <param name="APP_NAME" value="stylizr" />
+</gap:plugin>
 
     <access origin="*" />
 
