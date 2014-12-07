@@ -74,10 +74,12 @@
                     var appId = prompt("493708454047333", "");
                     facebookConnectPlugin.browserInit(appId);
                 }
-                facebookConnectPlugin.login( ["email"], 
-                    function (response) { alert(JSON.stringify(response));
-                     
-                    	localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
+                  facebookConnectPlugin.login( ["email"], 
+                    function (response) { 
+                    	
+                    	
+                    	alert(JSON.stringify(response)) },
+                   localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
                     	localStorage.id = response.id;
                     	localStorage.name = response.first_name;
                     	localStorage.email = response.email;
@@ -87,14 +89,17 @@
 
                     		$(".login").fadeOut();
                     		$("#map_canvas,#footer,#header").fadeIn();
-				initialize_map();
+				initialize_map(); 	
                     	
-                   }; 
-                    
                     	
-                    function (response) { alert(JSON.stringify(response)) }
-            
-            };
+                    	
+                    	
+                    function (response) { alert(JSON.stringify(response)) });
+            }
+                
+                
+                
+             
             var showDialog = function () { 
                 facebookConnectPlugin.showDialog( { method: "feed" }, 
                     function (response) { alert(JSON.stringify(response)) },
