@@ -85,7 +85,7 @@
         </div>
         
        -->
-      
+
         
        <div id="header" style="display:none">
 		<img src="imgs/search.png" id="search-icon" class=" icon pull-left"/>
@@ -671,12 +671,7 @@ height: 100%;">
 			});
 			var $cat = '';
 			
-			$("img.cat").click(function(){
-								   $cat = $(this).attr("data-category");
-									$(".report-type-dialog").hide();
-									$(".report-form").show();
-									
-								});
+		
 			$("#footer #profile").click(function()
 			{
 				$(".rep").hide();
@@ -700,26 +695,7 @@ height: 100%;">
 								
 								var coor ='';
 								
-								$(".submit_message").click(function()
-								
-								
-								{
-									
-									  	$.post($url+"report",{'fb_id':"localStorage.id",user_fk: 4,
-									  	event_type_fk: $cat,title:$("#title").val(),
-									  	description: $("#description").val(), 
-									  	  venue: $("#venue").val(),coordinates:coor},function(e)
-			 {
-			 //localStorage.karma = 	e.new_karma;
-			  alert(e);
-			 },"json");
-			  
-			 $(".report-form").hide();
-									
-			 	$(".report-type-dialog,#report-type-dialog").show();
-									
-									
-								});
+							
 							getLocation();	
 								
 								function showLocation(position) {
@@ -769,7 +745,7 @@ $("#feed").load($url+"feed");
 				  
 				
 	</div>
-			
+			                                                                                                                                                                                        
 			<div class="report panel rep" style="z-index:101;display:none">
 			<a href="" data-toggle="modal" data-target="#report"><div><img src="imgs/report.png" class="report-icons"></div></a>
 		</div>
@@ -777,54 +753,50 @@ $("#feed").load($url+"feed");
 			<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-dialog report-modal">
 				<div class="modal-content">
-				  <div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title report-title" id="myModalLabel">Report</h4>
-				  </div>
-				  <div class="modal-body">
-					
-					
-					
-					
-					<div class="report-type-dialog" >
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h4 class="modal-title report-title" id="myModalLabel">Report</h4>
+					</div>
+					<div class="modal-body">
+						<div class="report-type-dialog" style="">
 							<div class="report-row row">
 								<div class="col-xs-4">
-									<center><img  data-category="Flood" src="imgs/flood.png" class="cat img-responsive report-type-button"><br> Flood</center>
+									<center><img data-category="Flood" src="imgs/flood.png" class="img-responsive report-type-button cat"><br> Flood</center>
 								</div>
 								<div class="col-xs-4">
-									<center><img   data-category="Help Needed" src="imgs/help.png" class="cat img-responsive report-type-button"><br> Help Needed</center>
+									<center><img data-category="Help Needed" src="imgs/help.png" class="img-responsive report-type-button cat"><br> Help Needed</center>
 								</div>
 								<div class="col-xs-4">
-									<center><img  data-category="Evacuation Area" src="imgs/evacuation.png" class=" cat img-responsive report-type-button"><br> Evacuation Area</center>
+									<center><img data-category="Evacuation Area" src="imgs/evacuation.png" class="img-responsive report-type-button"><br> Evacuation Area</center>
 								</div>
 							</div>
 							<div class="report-row row">
 								<div class="col-xs-4">
-									<center><img  data-category="Donation Drop-off" src="imgs/dropoff.png" class=" cat img-responsive report-type-button"><br> Donation Drop-off</center>
+									<center><img data-category="Donation Drop-off" src="imgs/dropoff.png" class="img-responsive report-type-button"><br> Donation Drop-off</center>
 								</div>
 								<div class="col-xs-4">
-									<center><img   data-category="Fund Raising" src="imgs/fund.png" class="  cat img-responsive report-type-button"><br> Fund Raising</center>
+									<center><img data-category="Fund Raising" src="imgs/fund.png" class="img-responsive report-type-button"><br> Fund Raising</center>
 								</div>
 								<div class="col-xs-4">
-									<center><img   data-category="Volunteer Station" src="imgs/volunteer.png" class=" cat img-responsive report-type-button">Volunteer Station</center>
+									<center><img data-category="Volunteer Station" src="imgs/volunteer.png" class="img-responsive report-type-button">Volunteer Station</center>
 								</div>
 							</div>
 						</div>
-						<div class="report-form" style="display: none">
-							<div>
+						<div class="report-form" style="display:none">
+							<div >
 								<div class="row">
 									<div class="col-xs-10 col-xs-offset-1">
-										<input class="form-control" type="text" name="title" id="title" placeholder="Event Name">
-										<textarea class="form-control" name="description" id="description" placeholder="Description" style="display: none;"></textarea>
-										<div id="datetime_start-container" class="form-group col-xs-6" style="display: none;">
+										<input class="form-control" type="text" name="title" id="title" placeholder="Event Name" />
+										<textarea class="form-control" name="description" id="description" placeholder="Description"></textarea>
+										<div id="datetime_start-container" class="form-group col-xs-6">
 											<label for="datetime_start">Start Date/Time</label>
-											<input class="form-control" type="datetime-local" id="datetime_start" name="datetime_start">
+											<input class="form-control" type="datetime-local" id="datetime_start" name="datetime_start" />
 										</div>
-										<div id="datetime_end-container" class="form-group col-xs-6" style="display: none;">
+										<div id="datetime_end-container" class="form-group col-xs-6">
 											<label for="datetime_end">End Date/Time</label>
-											<input class="form-control" type="datetime-local" id="datetime_end" name="datetime_end">
+											<input class="form-control" type="datetime-local" id="datetime_end" name="datetime_end" />
 										</div>
-										<input class="form-control" type="text" name="venue" id="venue" placeholder="Venue Address" style="display: none;">
+										<input class="form-control" type="text" name="venue" id="venue" placeholder="Venue Address" />
 									</div>
 								</div>
 								<div class="row report-form-toggle" style="margin-top:10px;">
@@ -849,6 +821,58 @@ $("#feed").load($url+"feed");
 									</button>
 								</div>
 							</div>
-				  </div>	</div>	
+							<script>
+								$("img.cat").click(function(){
+								   $cat = $(this).attr("data-category");
+									$(".report-type-dialog").hide();
+									$(".report-form").show();
+									
+								});
+								
+									$(".submit_message").click(function()
+								
+								
+								{
+									
+									  	$.post($url+"report",{'fb_id':"localStorage.id",user_fk: 4,
+									  	event_type_fk: $cat,title:$("#title").val(),
+									  	description: $("#description").val(), 
+									  	  venue: $("#venue").val(),coordinates:coor},function(e)
+			 {
+			 //localStorage.karma = 	e.new_karma;
+			  alert(e);
+			 },"json");
+			  
+			 $(".report-form").hide();
+									
+			 	$(".report-type-dialog,#report-type-dialog").show();
+									
+									
+								});
+								$("#description").hide();
+								$("#datetime_start-container").hide();
+								$("#datetime_end-container").hide();
+								$("#venue").hide();
+								$("#description-toggle").click(function() {
+									$("#description").slideToggle();
+								});
+								
+								$("#datetime_start-toggle").click(function() {
+									$("#datetime_start-container").slideToggle();
+								});
+								
+								$("#datetime_end-toggle").click(function() {
+									$("#datetime_end-container").slideToggle();
+								});
+								
+								$("#venue-toggle").click(function() {
+									$("#venue").slideToggle();
+								});
+							</script>
+						</div>
+					</div>
+				</div>
+			  </div>
+			</div>
     </body>
 </html>
