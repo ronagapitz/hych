@@ -81,20 +81,22 @@
                     	alert(JSON.stringify(response)) ;
                     	
                     	
-
+/*
                     		$(".login").fadeOut();
                     		$("#map_canvas,#footer,#header").fadeIn();
 				initialize_map(); 	
+			
+			*/	
                     	facebookConnectPlugin.api( "me/",
                     function (response) { 
-                    	 localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
+                    /*	 localStorage.dp = 'https://graph.facebook.com/'+response.id+'/picture?type=large&return_ssl_results=1';
                     	localStorage.id = response.id;
                     	localStorage.name = response.first_name;
                     	localStorage.email = response.email;
                     	$("#profile-photo").attr("src",localStorage.dp);
                     	                    	$("#profile-name").text("localStorage.name");
 
-                    	
+                    	*/
                     	alert(JSON.stringify(response)) },
                     	
                     	
