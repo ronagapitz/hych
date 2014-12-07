@@ -73,7 +73,7 @@
     </head> 
     <body> 
     	
-    	
+    	<!--
       <div class="app">
            
             <div class="event listening button" onclick="login();">Login with Facebook</div>
@@ -84,7 +84,7 @@
             <div class="event listening button" onclick="logout();">Logout with Facebook</div>
         </div>
         
-        
+       -->
       
         
        <div id="header" style="display:none">
@@ -108,9 +108,91 @@
 	</div>
 	
 	<div id="map_canvas" class="body" style="position: absolute;width:100%;height:100%;top: 0px;display:none;"> 
+		
+		
+			<div class="report panel">
+			<a href="" data-toggle="modal" data-target="#report"><div><img src="imgs/report.png" class="report-icons"></div></a>
 		</div>
-	
-	
+		
+			<div class="modal fade" id="report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog report-modal">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title report-title" id="myModalLabel">Report</h4>
+				  </div>
+				  <div class="modal-body">
+					
+					
+					
+					
+					<div class="report-type-dialog" >
+							<div class="report-row row">
+								<div class="col-xs-4">
+									<center><img  data-category="Flood" src="imgs/flood.png" class=" cat img-responsive report-type-button"><br> Flood</center>
+								</div>
+								<div class="col-xs-4">
+									<center><img   data-category="Help Needed" src="imgs/help.png" class=" cat img-responsive report-type-button"><br> Help Needed</center>
+								</div>
+								<div class="col-xs-4">
+									<center><img  data-category="Evacuation Area" src="imgs/evacuation.png" class=" cat img-responsive report-type-button"><br> Evacuation Area</center>
+								</div>
+							</div>
+							<div class="report-row row">
+								<div class="col-xs-4">
+									<center><img  data-category="Donation Drop-off" src="imgs/dropoff.png" class=" cat img-responsive report-type-button"><br> Donation Drop-off</center>
+								</div>
+								<div class="col-xs-4">
+									<center><img   data-category="Fund Raising" src="imgs/fund.png" class="  cat img-responsive report-type-button"><br> Fund Raising</center>
+								</div>
+								<div class="col-xs-4">
+									<center><img   data-category="Volunteer Station" src="imgs/volunteer.png" class=" cat img-responsive report-type-button">Volunteer Station</center>
+								</div>
+							</div>
+						</div>
+						<div class="report-form" style="display: none">
+							<div>
+								<div class="row">
+									<div class="col-xs-10 col-xs-offset-1">
+										<input class="form-control" type="text" name="title" id="title" placeholder="Event Name">
+										<textarea class="form-control" name="description" id="description" placeholder="Description" style="display: none;"></textarea>
+										<div id="datetime_start-container" class="form-group col-xs-6" style="display: none;">
+											<label for="datetime_start">Start Date/Time</label>
+											<input class="form-control" type="datetime-local" id="datetime_start" name="datetime_start">
+										</div>
+										<div id="datetime_end-container" class="form-group col-xs-6" style="display: none;">
+											<label for="datetime_end">End Date/Time</label>
+											<input class="form-control" type="datetime-local" id="datetime_end" name="datetime_end">
+										</div>
+										<input class="form-control" type="text" name="venue" id="venue" placeholder="Venue Address" style="display: none;">
+									</div>
+								</div>
+								<div class="row report-form-toggle" style="margin-top:10px;">
+									<div class="col-xs-10 col-xs-offset-1">
+										<button id="description-toggle" class="col-xs-3 btn btn-default btn-md">
+											<span class="glyphicon glyphicon-align-left"></span>
+										</button>
+										<button id="datetime_start-toggle" class="col-xs-3 btn btn-default btn-md">
+											<span class="glyphicon glyphicon-play"></span>
+										</button>
+										<button id="datetime_end-toggle" class="col-xs-3 btn btn-default btn-md">
+											<span class="glyphicon glyphicon-stop"></span>
+										</button>
+										<button id="venue-toggle" class="col-xs-3 btn btn-default btn-md">
+											<span class="glyphicon glyphicon-map-marker"></span>
+										</button>
+									</div>
+								</div>
+								<div class="row report-form-toggle" style="margin-top:10px;">
+									<button class="submit_message btn btn-md btn-info col-xs-10 col-xs-offset-1">
+										Submit
+									</button>
+								</div>
+				  </div>
+				  
+				
+	</div>
+	</div>
 	
 	
 		<div id="feed" class="body" style="display:none" >
@@ -301,6 +383,7 @@
         
         <!-- SCRIPTS -->
         <script type="application/javascript" src="js/lib/jquery-2.0.3.js"></script>
+          <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         
         			
 				<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -310,8 +393,8 @@
 		
 			     
         var $url = "http://howyoucanhelp.ph/rest/";
-        
-        
+        var latlon='';
+  
             var login = function () {
                 if (!window.cordova) {
                     var appId = prompt("493708454047333", "");
@@ -778,19 +861,101 @@
 			});
 			
 			
-			$.post($url+"login",{'fb_id':1111111111111111111, first_name: 'localStorage.first_name',
-			 last_name:'localStorage.last_name', email: 'localStorage.email', profile_pic: 'localStorage.dp'},function(e)
-			 {
-			 localStorage.fk = 	e.user_fk;
-			 
-			 alert(localStorage.fk);
-			 },'json');
 		
 		
+		
+		
+		
+			
 			</script>			
-			
-			
-	
+					
+							<script>
+							var $cat = '';
+								$("#description").hide();
+								$("#datetime_start-container").hide();
+								$("#datetime_end-container").hide();
+								$("#venue").hide();
+								$("#description-toggle").click(function() {
+									$("#description").slideToggle();
+								});
+								
+								$("#datetime_start-toggle").click(function() {
+									$("#datetime_start-container").slideToggle();
+								});
+								
+								$("#datetime_end-toggle").click(function() {
+									$("#datetime_end-container").slideToggle();
+								});
+								
+								$("#venue-toggle").click(function() {
+									$("#venue").slideToggle();
+								});
+								
+								$(".cat").click(function()
+								
+								
+								{
+									
+									
+									$cat = $(this).attr("data-category");
+									$(".report-type-dialog,#report-type-dialog").hide();
+									$(".report-form").show();
+									
+								});
+								var coor ='';
+								
+								$(".submit_message").click(function()
+								
+								
+								{
+									alert();
+									  	$.post($url+"report",{'fb_id':"localStorage.id",user_fk: 4,
+									  	event_type_fk: $cat,title:$("#title").val(),
+									  	description: $("#description").val(), 
+									  	  venue: $("#venue").val(),coordinates:coor},function(e)
+			 {
+			 //localStorage.karma = 	e.new_karma;
+			  alert(e);
+			 },"json");
+			 
+			 $(".report-form").hide();
+									
+			 	$(".report-type-dialog,#report-type-dialog").show();
+									
+									
+								});
+							getLocation();	
+								
+								function showLocation(position) {
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+  coor =latitude + "," + longitude;
+}
+
+function errorHandler(err) {
+  if(err.code == 1) {
+    alert("Error: Access is denied!");
+  }else if( err.code == 2) {
+    alert("Error: Position is unavailable!");
+  }
+}
+function getLocation(){
+
+   if(navigator.geolocation){
+      // timeout at 60000 milliseconds (60 seconds)
+      var options = {timeout:600};
+      navigator.geolocation.getCurrentPosition(showLocation, 
+                                               errorHandler,
+                                               options);
+   }else{
+      alert("Sorry, browser does not support geolocation!");
+   }
+}
+
+
+$("#feed").load($url+"feed");
+							</script>
+					
 					
     </body>
 </html>
